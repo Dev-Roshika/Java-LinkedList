@@ -113,6 +113,22 @@ class LinkedList{
 		return false;
 	}
 
+	void searchNodeRecursively(int value){
+		Node temp = head;
+		boolean re = searchNodeRecursivelyMain(temp,value);
+		System.out.println(value+" exist in the list : "+re);
+	}
+
+	boolean searchNodeRecursivelyMain(Node temp,int value){
+		if(temp == null){
+			return false;
+		}
+		if(temp.data == value){
+			return true;
+		}
+		return searchNodeRecursivelyMain(temp.next,value);
+	}
+
 	void printList(String message){
 		Node temp = head;
 		System.out.print(message);
@@ -159,5 +175,7 @@ class LinkedList{
 		
 		boolean re = A.searchNodeIteratively(30);
 		System.out.println("20 is exist : "+re);		
+
+		A.searchNodeRecursively(30);
 	}
 }
