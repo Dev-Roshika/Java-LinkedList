@@ -31,6 +31,19 @@ class LinkedList{
 		pointer.next = newNode;
 	}
 
+	//insert at the end
+	void insertAtEnd(int value){
+		Node newNode = new Node(value);
+		if(head==null){
+			head = newNode;
+		}
+		Node end=head;
+		while(end.next!=null){
+			end = end.next;
+		}
+		end.next = newNode;
+	}
+
 	void printList(String message){
 		Node temp = head;
 		System.out.print(message);
@@ -56,5 +69,8 @@ class LinkedList{
 
 		A.insertAfterAGivenNode(20,50);
 		A.printList("Insert after the given node : ");
+
+		A.insertAtEnd(60);
+		A.printList("Insert at the end : ");
 	}
 }
