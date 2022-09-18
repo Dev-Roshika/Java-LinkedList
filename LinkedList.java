@@ -11,10 +11,17 @@ class LinkedList{
 			next = null;
 		}
 	}//End of Node class
-		
-	void printList(){
+	
+	//insert at the front
+	void insertAtFront(int value){
+		Node newNode = new Node(value);
+		newNode.next = head;
+		head = newNode;
+	}
+
+	void printList(String message){
 		Node temp = head;
-		System.out.print("LinkedList is : ");
+		System.out.print(message);
 		while(temp!=null){
 			System.out.print(temp.data+" | ");
 			temp = temp.next;
@@ -30,6 +37,9 @@ class LinkedList{
 		Node third_Node = new Node(30);
 		A.head.next = second_Node;
 		second_Node.next = third_Node;
-		A.printList(); //print linked list items
+		A.printList("Initial linked list is : "); //print linked list items
+
+		A.insertAtFront(40);
+		A.printList("After the insert at the front : ");
 	}
 }
