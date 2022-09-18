@@ -100,6 +100,19 @@ class LinkedList{
 		temp.next = temp.next.next;
 	}
 
+	//SEARCH------------------------
+	//
+	boolean searchNodeIteratively(int value){
+		Node temp = head;
+		while(temp!=null){
+			if(temp.data==value){
+				return true;
+			}
+			temp = temp.next;
+		}
+		return false;
+	}
+
 	void printList(String message){
 		Node temp = head;
 		System.out.print(message);
@@ -143,5 +156,8 @@ class LinkedList{
 
 		A.deleteNodeByGivenPosition(1);
 		A.printList("After the delete node from the given postion : ");
+		
+		boolean re = A.searchNodeIteratively(30);
+		System.out.println("20 is exist : "+re);		
 	}
 }
