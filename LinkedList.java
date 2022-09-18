@@ -19,6 +19,18 @@ class LinkedList{
 		head = newNode;
 	}
 
+	//insert after a given node
+	void insertAfterAGivenNode(int value,int newNodeValue){
+		Node newNode = new Node(newNodeValue);
+		Node pointer = head;
+		//pointer.data = 0;
+		while(pointer.data!=value){
+			pointer = pointer.next;
+		}
+		newNode.next = pointer.next;
+		pointer.next = newNode;
+	}
+
 	void printList(String message){
 		Node temp = head;
 		System.out.print(message);
@@ -41,5 +53,8 @@ class LinkedList{
 
 		A.insertAtFront(40);
 		A.printList("After the insert at the front : ");
+
+		A.insertAfterAGivenNode(20,50);
+		A.printList("Insert after the given node : ");
 	}
 }
