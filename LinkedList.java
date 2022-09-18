@@ -1,3 +1,5 @@
+import javax.swing.text.Position;
+
 class LinkedList{
 	Node head ; //Head of the list
 	
@@ -78,6 +80,25 @@ class LinkedList{
 		temp.next = null;
 	}
 
+	//delete node by given position
+	void deleteNodeByGivenPosition(int pos){
+		Node temp = head;
+		if(head==null){
+			System.out.println("Cannot be delete a node - because list is Empty!!!");
+		}
+		if(pos == 0){
+			head = head.next;
+			return;
+		}
+		for(int i=0;i<pos-1;i++){
+			temp = temp.next;
+		}
+		//if given postion doesn't exist in the list
+		if(temp==null || temp.next==null){
+			System.out.println("Given position doesn't exist...");
+		}
+		temp.next = temp.next.next;
+	}
 
 	void printList(String message){
 		Node temp = head;
@@ -119,5 +140,8 @@ class LinkedList{
 		
 		A.deleteFromEnd();
 		A.printList("After the delete node from the end : ");
+
+		A.deleteNodeByGivenPosition(1);
+		A.printList("After the delete node from the given postion : ");
 	}
 }
