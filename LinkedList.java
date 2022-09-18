@@ -54,6 +54,18 @@ class LinkedList{
 		head = head.next;
 	}
 
+	//delete particular node
+	void deleteParticularNode(int value){
+		Node temp = head;
+		if(head==null){
+			System.out.println("Cannot be delete a node - because list is Empty!!!");
+		}
+		while(temp.next.data != value){
+			temp = temp.next;
+		}
+		temp.next = temp.next.next;
+	}
+
 	//delete from the end
 	void deleteFromEnd(){
 		if(head==null){
@@ -101,6 +113,9 @@ class LinkedList{
 
 		A.deleteFromFront();
 		A.printList("After the delete node from the front : ");
+
+		A.deleteParticularNode(20);
+		A.printList("After the delete the particular node : ");
 		
 		A.deleteFromEnd();
 		A.printList("After the delete node from the end : ");
