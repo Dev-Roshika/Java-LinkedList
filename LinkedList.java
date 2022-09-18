@@ -1,16 +1,14 @@
 class LinkedList{
-	Node head = null; //Head of the list
+	Node head ; //Head of the list
 	
 	//Node class
 	static class Node{
-		Node head,next;
+		Node next;
 		int data;
-		Node(){
-			next=head = null;
-		}
+
 		Node(int data){//constructor to create nodes
 			this.data = data;
-			head = next = null;
+			next = null;
 		}
 	}//End of Node class
 		
