@@ -8,7 +8,7 @@ class LinkedList{
 		Node(){
 			next=head = null;
 		}
-		Node(int data){
+		Node(int data){//constructor to create nodes
 			this.data = data;
 			head = next = null;
 		}
@@ -24,12 +24,14 @@ class LinkedList{
 	}
 
 	public static void main(String args[]){
-		LinkedList A = new LinkedList();
+		LinkedList A = new LinkedList(); //Empty Linked list
+
+		//create nodes
 		A.head = new Node(10);
 		Node second_Node = new Node(20);
 		Node third_Node = new Node(30);
 		A.head.next = second_Node;
 		second_Node.next = third_Node;
-		A.printList();
+		A.printList(); //print linked list items
 	}
 }
