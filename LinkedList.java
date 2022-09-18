@@ -12,6 +12,7 @@ class LinkedList{
 		}
 	}//End of Node class
 	
+	//INSERT------------------------
 	//insert at the front
 	void insertAtFront(int value){
 		Node newNode = new Node(value);
@@ -44,9 +45,21 @@ class LinkedList{
 		end.next = newNode;
 	}
 
+	//DELETE------------------------
+	//delete at the front
+	void deleteFromFront(){
+		if(head==null){
+			System.out.println("Cannot be delete a node - because list is Empty!!!");
+		}
+		head = head.next;
+	}
+
 	void printList(String message){
 		Node temp = head;
 		System.out.print(message);
+		if(head==null){
+			System.out.println("List is Empty!!!");
+		}
 		while(temp!=null){
 			System.out.print(temp.data+" | ");
 			temp = temp.next;
@@ -72,5 +85,9 @@ class LinkedList{
 
 		A.insertAtEnd(60);
 		A.printList("Insert at the end : ");
+
+		A.deleteFromFront();
+		A.printList("After the delete node from the front : ");
+		
 	}
 }
