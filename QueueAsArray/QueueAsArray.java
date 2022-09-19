@@ -7,8 +7,15 @@ public class QueueAsArray {
     int front = 0;
     int rear = -1;
 
+    public boolean isEmpty(){	
+		return (rear==-1);
+	}
+	
+	public boolean isFull(){
+		return (rear==size);
+	}
     void deQueue(){
-        if(front>rear) System.out.println("Stack Underflow");
+        if(isEmpty()) System.out.println("Stack Underflow");
         else{
             //1st method - Move front
             System.out.println("Dequeue element: "+QArray[front]);
@@ -30,20 +37,20 @@ public class QueueAsArray {
     }
 
     void enQueue(String value){
-        if(rear==size) System.out.println("Stack Overflow");
+        if(isFull()) System.out.println("Stack Overflow");
         else{
             QArray[++rear] = value;
         }
     }
 
     void peek(){
-        if(front>rear) System.out.println("Stack Underflow");
+        if(isEmpty()) System.out.println("Stack Underflow");
         else{
             System.out.println("Front element is : "+QArray[front]);
         } 
     }
     void display(){
-        if(front>rear) System.out.println("Stack Underflow");
+        if(isEmpty()) System.out.println("Stack Underflow");
         else{
             System.out.print("Queue is : ");
             for(int i=rear;i>=front;i--){
