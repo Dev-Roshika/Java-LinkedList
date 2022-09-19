@@ -25,11 +25,24 @@ public class DoublyLinkedList {
         }
 
     }
+    //INSERT
+    //insert at the front
+    void insertAtFront(int value){
+        if(isEmpty()){
+            addNode(value);
+        } else{
+            Node newNode = new Node(value);
+            newNode.next = head;
+            head.prev = newNode;
+            newNode.prev=null;
+            head = newNode;
+        }
+    }
 
     void printList(String message){
         Node temp = head;
         System.out.println(message);
-        if(head==null){
+        if(isEmpty()){
 			System.out.println("List is Empty!!!");
 		}
         while(temp!=null){
@@ -40,6 +53,14 @@ public class DoublyLinkedList {
 
     public static void main(String args[]){
         DoublyLinkedList D = new DoublyLinkedList();
-        
+        D.printList("Elements in the list : ");
+        D.insertAtFront(10);
+        D.printList("After add elements : ");
+
+        D.insertAtFront(20);
+        D.printList("After add elements : ");
+
+        D.insertAtFront(30);
+        D.printList("After add elements : ");
     }
 }
