@@ -68,6 +68,17 @@ public class DoublyLinkedList {
         }
     }
 
+    //DELETE
+    //delete at the front
+    void deleteFromFront(){
+		if(isEmpty()){
+			System.out.println("Cannot be delete a node - because list is Empty!!!");
+		} else{
+            head = head.next;
+            head.prev = null;
+        }
+	}
+
     void printList(String message){
         Node temp = head;
         System.out.println(message);
@@ -83,11 +94,18 @@ public class DoublyLinkedList {
     public static void main(String args[]){
         DoublyLinkedList D = new DoublyLinkedList();
         D.printList("Elements in the list : ");
+        
+        D.deleteFromFront();
+        D.printList("Delete from the front : ");
+
         D.insertAtFront(10);
         D.printList("After insert elements at the front : ");
 
         D.insertAtFront(20);
         D.printList("After insert elements at the front : ");
+        
+        D.deleteFromFront();
+        D.printList("Delete from the front : ");
 
         D.insertAtEnd(40);
         D.printList("After add elements in the end : ");
@@ -97,5 +115,8 @@ public class DoublyLinkedList {
 
         D.insertAtParticularPos(60,3);
         D.printList("After insert elements at the postion 3 : ");
+
+        D.deleteFromFront();
+        D.printList("Delete from the front : ");
     }
 }
