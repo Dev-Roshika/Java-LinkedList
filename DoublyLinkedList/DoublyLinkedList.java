@@ -21,7 +21,7 @@ public class DoublyLinkedList {
             tail.next = newNode;
             newNode.prev = tail;
             tail = newNode;
-
+            newNode.next = null;
         }
 
     }
@@ -36,6 +36,22 @@ public class DoublyLinkedList {
             head.prev = newNode;
             newNode.prev=null;
             head = newNode;
+        }
+    }
+
+    //insert at the particular position
+    void insertAtParticularPos(int value,int pos){
+        if(isEmpty()){
+            addNode(value);
+        } else{
+            Node newNode = new Node(value);
+            Node curr = head;
+            for(int i=0;i<pos-2;i++){
+                curr = curr.next;
+            }
+            newNode.next=curr.next;
+            curr.next = newNode;
+            newNode.prev = curr;
         }
     }
 
@@ -78,5 +94,8 @@ public class DoublyLinkedList {
 
         D.insertAtFront(30);
         D.printList("After insert elements at the front : ");
+
+        D.insertAtParticularPos(60,3);
+        D.printList("After insert elements at the postion 3 : ");
     }
 }
