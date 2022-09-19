@@ -79,6 +79,30 @@ public class DoublyLinkedList {
         }
 	}
 
+    //delete at the particular position
+    void deleteFromParticularPos(int pos){
+		try{
+            if(isEmpty()){
+                System.out.println("Cannot be delete a node - because list is Empty!!!");
+            } else{
+                Node curr = head;
+                if(pos==1 ){
+                    deleteFromFront();
+                }
+                else if(pos>=2){
+                    for(int i=0;i<pos-2;i++){
+                        curr = curr.next;
+                    }
+                    curr.next = curr.next.next;
+                }else if(pos<=0){
+                    System.out.println("***\npos is invalid. Position must be greater than 0.\n***"); 
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e+" : Because pos is invalid. pos must be less than or equal 3");
+        }
+	}
+
     void printList(String message){
         Node temp = head;
         System.out.println(message);
@@ -118,5 +142,8 @@ public class DoublyLinkedList {
 
         D.deleteFromFront();
         D.printList("Delete from the front : ");
+
+        D.deleteFromParticularPos(5);
+        D.printList("Delete from the position 1 : ");
     }
 }
