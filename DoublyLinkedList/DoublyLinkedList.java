@@ -103,6 +103,20 @@ public class DoublyLinkedList {
         }
 	}
 
+    //SEARCH
+    //search element
+    void search(int value){
+        System.out.println("Searching...........");
+        Node curr=head;
+        boolean found = false;
+        while(curr.next!=null){
+            if(curr.data==value) {found = true;break;}
+            curr=curr.next;
+        }
+        if(found) System.out.println(value+" is exist in the list.");
+        else System.out.println(value+" is not exist in the list.");
+    }
+
     void printList(String message){
         Node temp = head;
         System.out.println(message);
@@ -139,6 +153,8 @@ public class DoublyLinkedList {
 
         D.insertAtParticularPos(60,3);
         D.printList("After insert elements at the postion 3 : ");
+
+        D.search(100);
 
         D.deleteFromFront();
         D.printList("Delete from the front : ");
