@@ -39,6 +39,19 @@ public class DoublyLinkedList {
         }
     }
 
+    //insert at the end
+    void insertAtEnd(int value){
+        if(isEmpty()){
+            addNode(value);
+        } else{
+            Node newNode = new Node(value);
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+            newNode.next = null;
+        }
+    }
+
     void printList(String message){
         Node temp = head;
         System.out.println(message);
@@ -55,12 +68,15 @@ public class DoublyLinkedList {
         DoublyLinkedList D = new DoublyLinkedList();
         D.printList("Elements in the list : ");
         D.insertAtFront(10);
-        D.printList("After add elements : ");
+        D.printList("After insert elements at the front : ");
 
         D.insertAtFront(20);
-        D.printList("After add elements : ");
+        D.printList("After insert elements at the front : ");
+
+        D.insertAtEnd(40);
+        D.printList("After add elements in the end : ");
 
         D.insertAtFront(30);
-        D.printList("After add elements : ");
+        D.printList("After insert elements at the front : ");
     }
 }
