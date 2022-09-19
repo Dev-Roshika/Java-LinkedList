@@ -1,4 +1,4 @@
-import javax.swing.text.Position;
+//import javax.swing.text.Position;
 
 class LinkedList{
 	Node head ; //Head of the list
@@ -101,7 +101,7 @@ class LinkedList{
 	}
 
 	//SEARCH------------------------
-	//
+	//search iteratively
 	boolean searchNodeIteratively(int value){
 		Node temp = head;
 		while(temp!=null){
