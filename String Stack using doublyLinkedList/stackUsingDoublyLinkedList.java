@@ -60,7 +60,7 @@ public class stackUsingDoublyLinkedList {
         }
     }
     public static void main(String args[]) {
-        stackUsingDoublyLinkedList S = new stackUsingDoublyLinkedList();
+        stringQueueUsingDoublyLinkedList S = new stringQueueUsingDoublyLinkedList();
             S.push("e1");
             S.push("e2");
             S.push("e3");
